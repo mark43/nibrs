@@ -47,6 +47,7 @@ public class PropertySegment extends AbstractSegment
 	public static final int PROPERTY_DESCRIPTION_COUNT = 10;
 
 	public static final char PROPERTY_SEGMENT_TYPE_IDENTIFIER = '3';
+    public static final String PROPERTY_SEGMENT_LENGTH = "0307";
 	
 	private String typeOfPropertyLoss;
     private String[] propertyDescription;
@@ -286,6 +287,12 @@ public class PropertySegment extends AbstractSegment
 	public Object getWithinSegmentIdentifier() {
 		return typeOfPropertyLoss;
 	}
+
+    @Override
+    public String getSegmentLength()
+    {
+        return PROPERTY_SEGMENT_LENGTH;
+    }
 	
 	public Map<String, Integer> getPropertyDescriptionValueMap(){
 		Map<String, Integer> descriptionValueMap = new HashMap<String, Integer>();

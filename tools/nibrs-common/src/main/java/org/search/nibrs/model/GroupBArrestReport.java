@@ -53,6 +53,12 @@ public class GroupBArrestReport extends AbstractReport {
 	public String getIdentifier() {
 		return getArresteeCount() == 0 ? null : getArrestees().get(0).getArrestTransactionNumber();
 	}
+
+	@Override
+	public String getAdminSegmentLength()
+	{
+		return ArresteeSegment.GROUP_B_ARRESTEE_SEGMENT_LENGTH;
+	}
 	
 	private String getATNOrEmpty() {
 		return getArresteeCount() == 0 ? "empty" : getArrestees().get(0).getArrestTransactionNumber();
